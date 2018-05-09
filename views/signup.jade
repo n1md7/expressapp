@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	div.container
+		div.col-md-6.col-centered.border-bottom.text-center
+			h1.text-center.alert.alert-warning Game Portal
+			h4 #{title}
+			h6.mb-3 #{subTitle}
+		div.col-md-4.col-centered.border-bottom.o-auto
+			h3.text-center.my-5 Sign Up
+			form(action='/users/signup', method='post')
+				.form-group
+					input.form-control.mb-3(name='username',placeholder='username', autofocus='on')
+					.error-username.hidden.alert.alert-danger
+					input.form-control.mb-3(type='password',name='password1',placeholder='password')
+					.error-password1.hidden.alert.alert-danger
+					input.form-control.mb-3(type='password',name='password2',placeholder='password')
+					.error-password2.hidden.alert.alert-danger
+					button.btn.btn-primary.float-right.mb-3.w-50(type='submit', name='signin') Sign Up
+					a.btn.btn-dark.pull-left.o-auto.w-25(href='/') Sign In
