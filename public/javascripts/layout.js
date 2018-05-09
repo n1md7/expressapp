@@ -6,7 +6,7 @@ $(document).ready(function(){
 					.removeClass('hidden')
 					.html(`Error, required field! <b>${jQuery(this).attr('name')}</b>`);
 
-				$(this).on('click', () => {$(this).next().toggleClass('hidden', true);});
+				$(this).on('click, focus', () => {$(this).next().toggleClass('hidden', true);});
 				event.preventDefault();
 			}
 		});

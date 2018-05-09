@@ -11,7 +11,7 @@ router.get('/signup/:id?', function(req, res, next){
 	console.log(req.params.id || null);
 	res.render('signup', {
 		title: 'Welcome to Express Game portal',
-		subTitle: 'Create account right now '+req.session.email
+		subTitle: 'Create account right now'
 	});
 });
 
@@ -33,6 +33,14 @@ router.post('/signup', function(req, res, next){
 		title: 'Welcome to Express Game portal ' + req.body.username ,
 		subTitle: 'Create account right now'
 	});
+});
+
+
+//logout function
+router.get('/signout', function(req, res, next){
+	req.session.destroy();
+	res.redirect('/');
+	console.log('session has been destroied');
 });
 
 
