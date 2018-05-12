@@ -1,0 +1,41 @@
+<div class="container-fluid mt-5">
+	<div class="row justify-content-center">
+		<div class="col col-xl-auto text-center mb-3">
+			<h1 class="text-muted alert alert-dark">
+				{{ title }}
+			</h1>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col col-xl-4 clearfix">
+		<img src="/images/logo.png" alt="" class="img-fluid w-50 mx-auto d-block">
+			<h3 class="text-center my-3">
+				User Sign Up
+			</h3>
+			{{# if error}}
+				<div class="error-login alert alert-danger">
+					Error, no record created!
+				</div>
+			{{/if}}
+			{{# if success}}
+				<div class="error-login alert alert-success">
+					Success, a record has been created!
+				</div>
+			{{/if}}
+			<form action="/users/signup" method="post">
+				<div class="form-group">
+					<input autocomplete="off" type="text" class="form-control mb-3" name='username' placeholder='username' autofocus='on'>	
+					<div class="error-username hidden alert alert-danger"></div>
+					<input autocomplete="off" class="form-control mb-3" type='password' name='password1' placeholder='password'>
+					<div class="error-password hidden alert alert-danger"></div>
+					<input autocomplete="off" class="form-control mb-3" type="password" name='password2' placeholder='password'>
+					<div class="error-password hidden alert alert-danger"></div>
+					<button class="btn btn-dark float-right mb-3" type='submit' name='signin'>Sign-Up</button>
+						<a href='/' class="btn btn-default float-left">Sign-In</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+		

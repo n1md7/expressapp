@@ -7,7 +7,6 @@ const db = require('../conf');
 router.get('/', function(req, res, next) {
 	console.log(req.session)
 	res.render('index', { 
-		message: `Session has been set: ${req.session.userData || null}`,
 		title: 'Welcome to Express Game portal',
 		subTitle: 'Please Login to get access or create account right now'
 	});
@@ -29,9 +28,8 @@ router.post('/', function(req, res, next) {
 					res.redirect('/main');
 					return;
 				}else{
-					console.log('Wring credentials');
+					console.log('Wrong credentials');
 					res.render('index', { 
-						message: `Session has been set: ${req.session.email}`,
 						title: 'Welcome to Express Game portal',
 						subTitle: 'Please Login to get access or create account right now',
 						error: 'Incorrect combination'

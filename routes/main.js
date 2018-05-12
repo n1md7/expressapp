@@ -10,7 +10,8 @@ router.get('/', function(req, res, next) {
 		res.redirect('/');
 	}else{
 		res.render('main', { 
-			message: `Session has been set: ${req.session.userData || null}`,
+			message: `Session has been set`,
+			user: req.session.userData,
 			title: 'Welcome to Express Game portal',
 			subTitle: 'Please Login to get access or create account right now'
 		});

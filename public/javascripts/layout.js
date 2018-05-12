@@ -10,5 +10,14 @@ $(document).ready(function(){
 				event.preventDefault();
 			}
 		});
+		if(
+			$(this).find('input[name=password1]').val() !=
+			$(this).find('input[name=password2]').val()
+		){
+			$(this).find('input[name=password2]').next()
+					.removeClass('hidden')
+					.html(`Error, passwords didn\'t match!`);
+			event.preventDefault();
+		}
 	});
 });
