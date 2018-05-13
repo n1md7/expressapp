@@ -37,12 +37,11 @@ router.post('/', function(req, res, next) {
 				}
 			}else{
 				console.log('Error in selecting data: login page');
+				console.log(error);
 			}
 		}
 	);
-	db.end(function(){
-		console.log('Connection terminated manually');
-	});
+			// db.end(e => console.log(`Connection terminated manually! code: ${e}`));
 });
 
 module.exports = router;

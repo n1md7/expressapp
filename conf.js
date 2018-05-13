@@ -7,7 +7,7 @@ var db = mysql.createConnection({
 	database: "express"
 });
 
-db.connect(function(DBerror) {
+/*db.connect(function(DBerror) {
 	if (DBerror){
 		console.log(DBerror);
 		return;
@@ -15,5 +15,5 @@ db.connect(function(DBerror) {
 		console.log('DB connected')
 	}
 });
-
+*/
 module.exports = db;
