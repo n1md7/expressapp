@@ -38,7 +38,11 @@ router.post('/', function(req, res, next) {
 			}else{
 				console.log('Error in selecting data: login page');
 			}
-		});
+		}
+	);
+	db.end(function(){
+		console.log('Connection terminated manually');
+	});
 });
 
 module.exports = router;

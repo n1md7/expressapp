@@ -55,6 +55,10 @@ router.post('/signup', function(req, res, next){
 			}
 			res.render('signup', retObj);
 		});
+	
+	db.end(function(){
+		console.log('Connection terminated manually');
+	});
 });
 
 
